@@ -22,6 +22,12 @@
 #define DEFINE_HF_BITMASK_VAL(name, desc, key, type, dis, bitmask, val) {&name, {desc, key, FT_##type, BASE_##dis, VALS(val), bitmask, NULL, HFILL}},
 #define DEFINE_HF_BITMASK_TF(name, desc, key, bitmask) {&name, {desc, key, FT_BOOLEAN, 8, TFS(tf_string), bitmask, NULL, HFILL}},
 
+#if Windows == SYSTEM_NAME && defined(DEBUG)
+#define WS_LOG(format, ...) ws_log("", LOG_LEVEL_CRITICAL, format, ##__VA_ARGS__)
+#else
+#define WS_LOG(format, ...)
+#endif
+
 extern int proto_mcje;
 extern int proto_mcbe;
 

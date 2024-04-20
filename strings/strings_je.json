@@ -25,6 +25,10 @@
       "name": "Packet Name",
       "type": "string"
     },
+    "unknown_packet_je": {
+      "name": "Packet Name",
+      "type": "string"
+    },
     "protocol_version_je": {
       "name": "Protocol Version",
       "type": "string"
@@ -39,15 +43,30 @@
     },
     "ping_time_je": {
       "name": "Ping Time",
-      "type": "u64"
+      "type": "i64"
     },
     "server_status_je": {
       "name": "Server Status",
       "type": "string"
     },
+    "text_je": {
+      "name": "Text",
+      "type": [
+        "string",
+        "bytes"
+      ]
+    },
     "legacy_slp_payload": {
       "name": "Legacy SLP Payload",
       "type": "u8"
+    },
+    "entity_type_name": {
+      "name": "Entity Type Name",
+      "type": "string"
+    },
+    "sync_entity_data": {
+      "name": "Sync Entity Data Type",
+      "type": "string"
     },
     "x": {
       "name": "X",
@@ -209,7 +228,10 @@
     },
     "long": {
       "name": "Long Integer",
-      "type": "i64"
+      "type": [
+        "i64",
+        "u64"
+      ]
     },
     "float": {
       "name": "Float",
@@ -221,7 +243,10 @@
     },
     "component": {
       "name": "Component",
-      "type": "string"
+      "type": [
+        "string",
+        "bytes"
+      ]
     },
     "boolean": {
       "name": "Boolean",
@@ -330,11 +355,17 @@
     },
     "name": {
       "name": "Name",
-      "type": "string"
+      "type": [
+        "string",
+        "bytes"
+      ]
     },
     "key": {
       "name": "Key",
-      "type": "string"
+      "type": [
+        "string",
+        "u32"
+      ]
     },
     "value": {
       "name": "Value",
@@ -378,7 +409,8 @@
         "i32",
         "i64",
         "f32",
-        "f64"
+        "f64",
+        "string"
       ]
     },
     "max": {
@@ -387,7 +419,8 @@
         "i32",
         "i64",
         "f32",
-        "f64"
+        "f64",
+        "string"
       ]
     },
     "suggestion_type": {
@@ -396,7 +429,10 @@
     },
     "reason": {
       "name": "Reason",
-      "type": "string"
+      "type": [
+        "string",
+        "bytes"
+      ]
     },
     "server_id": {
       "name": "Server ID",
@@ -487,11 +523,17 @@
     },
     "title": {
       "name": "Title",
-      "type": "string"
+      "type": [
+        "string",
+        "bytes"
+      ]
     },
     "desc": {
       "name": "Description",
-      "type": "string"
+      "type": [
+        "string",
+        "bytes"
+      ]
     },
     "frame_type": {
       "name": "Frame Type",
@@ -546,7 +588,10 @@
     },
     "color": {
       "name": "Color",
-      "type": "u32"
+      "type": [
+        "u32",
+        "i32"
+      ]
     },
     "dividers": {
       "name": "Dividers",
@@ -585,7 +630,10 @@
     },
     "tooltip": {
       "name": "Tooltip",
-      "type": "string"
+      "type": [
+        "string",
+        "bytes"
+      ]
     },
     "root_index": {
       "name": "Root Index",
@@ -625,11 +673,17 @@
     },
     "property": {
       "name": "Property",
-      "type": "i16"
+      "type": [
+        "i16",
+        "string"
+      ]
     },
     "slot": {
       "name": "Slot",
-      "type": "i16"
+      "type": [
+        "i16",
+        "u32"
+      ]
     },
     "cooldown_ticks": {
       "name": "Cooldown Ticks",
@@ -641,13 +695,17 @@
     },
     "message": {
       "name": "Message",
-      "type": "string"
+      "type": [
+        "string",
+        "bytes"
+      ]
     },
     "target": {
       "name": "Target",
       "type": [
         "string",
-        "u32"
+        "u32",
+        "bytes"
       ]
     },
     "entity_id": {
@@ -658,7 +716,7 @@
       ]
     },
     "entity_status": {
-      "name": "Entity Status",
+      "name": "Entity Event",
       "type": "i8"
     },
     "radius": {
@@ -778,11 +836,17 @@
     },
     "gamemode": {
       "name": "Game Mode",
-      "type": "u8"
+      "type": [
+        "u8",
+        "i8"
+      ]
     },
     "previous_gamemode": {
       "name": "Previous Game Mode",
-      "type": "i8"
+      "type": [
+        "u8",
+        "i8"
+      ]
     },
     "dimension_codec": {
       "name": "Dimension Codec",
@@ -790,7 +854,10 @@
     },
     "world_type": {
       "name": "World Type",
-      "type": "string"
+      "type": [
+        "string",
+        "u32"
+      ]
     },
     "world_name": {
       "name": "World Name",
@@ -949,7 +1016,10 @@
     },
     "unsigned_chat_content": {
       "name": "Unsigned Chat Content",
-      "type": "string"
+      "type": [
+        "string",
+        "bytes"
+      ]
     },
     "filter_type": {
       "name": "Filter Type",
@@ -961,11 +1031,17 @@
     },
     "network_name": {
       "name": "Network Name",
-      "type": "string"
+      "type": [
+        "string",
+        "bytes"
+      ]
     },
     "network_target_name": {
       "name": "Network Target Name",
-      "type": "string"
+      "type": [
+        "string",
+        "bytes"
+      ]
     },
     "duration": {
       "name": "Duration",
@@ -1045,7 +1121,10 @@
     },
     "prompt_message": {
       "name": "Prompt Message",
-      "type": "string"
+      "type": [
+        "string",
+        "bytes"
+      ]
     },
     "copy_metadata": {
       "name": "Copy Metadata",
@@ -1061,7 +1140,10 @@
     },
     "position": {
       "name": "Position",
-      "type": "i8"
+      "type": [
+        "i8",
+        "u32"
+      ]
     },
     "vehicle_id": {
       "name": "Vechicle ID",
@@ -1085,7 +1167,10 @@
     },
     "display_text": {
       "name": "Display Text",
-      "type": "string"
+      "type": [
+        "string",
+        "bytes"
+      ]
     },
     "team": {
       "name": "Team",
@@ -1113,11 +1198,17 @@
     },
     "prefix": {
       "name": "Prefix",
-      "type": "string"
+      "type": [
+        "string",
+        "bytes"
+      ]
     },
     "suffix": {
       "name": "Suffix",
-      "type": "string"
+      "type": [
+        "string",
+        "bytes"
+      ]
     },
     "player": {
       "name": "Player",
@@ -1125,7 +1216,10 @@
     },
     "item_name": {
       "name": "Item Name",
-      "type": "string"
+      "type": [
+        "string",
+        "bytes"
+      ]
     },
     "score_name": {
       "name": "Score Name",
@@ -1145,7 +1239,10 @@
     },
     "sound_id": {
       "name": "Sound ID",
-      "type": "u32"
+      "type": [
+        "u32",
+        "string"
+      ]
     },
     "resource": {
       "name": "Resource",
@@ -1192,11 +1289,17 @@
     },
     "header": {
       "name": "Header",
-      "type": "bool"
+      "type": [
+        "string",
+        "bytes"
+      ]
     },
     "footer": {
       "name": "Footer",
-      "type": "bool"
+      "type": [
+        "string",
+        "bytes"
+      ]
     },
     "collected_entity_id": {
       "name": "Collected Entity ID",
@@ -1224,7 +1327,10 @@
     },
     "amplifier": {
       "name": "Amplifier",
-      "type": "i8"
+      "type": [
+        "i8",
+        "u32"
+      ]
     },
     "hide_particles": {
       "name": "Hide Particles",
@@ -1236,7 +1342,10 @@
     },
     "motd": {
       "name": "MOTD",
-      "type": "string"
+      "type": [
+        "string",
+        "bytes"
+      ]
     },
     "icon_bytes": {
       "name": "Icon",
@@ -1280,7 +1389,10 @@
     },
     "speed": {
       "name": "Speed",
-      "type": "u32"
+      "type": [
+        "u32",
+        "f32"
+      ]
     },
     "portal_teleport_boundary": {
       "name": "Portal Teleport Boundary",
@@ -1296,7 +1408,10 @@
     },
     "text": {
       "name": "Text",
-      "type": "string"
+      "type": [
+        "string",
+        "bytes"
+      ]
     },
     "diameter": {
       "name": "Diameter",
@@ -1646,6 +1761,379 @@
       "name": "Has Background Texture",
       "type": "bool",
       "bitmask": "01"
+    },
+    "batch_size": {
+      "name": "Batch Size",
+      "type": "u32"
+    },
+    "desired_batch_size": {
+      "name": "Desired Batch Size",
+      "type": "f32"
+    },
+    "registry_data": {
+      "name": "Registry Data",
+      "type": "bytes"
+    },
+    "entity_status_name": {
+      "name": "Entity Event Name",
+      "type": "string"
+    },
+    "level_event_name": {
+      "name": "Level Event Name",
+      "type": "string"
+    },
+    "do_limited_crafting": {
+      "name": "Do Limited Crafting",
+      "type": "bool"
+    },
+    "slot_id": {
+      "name": "Slot ID",
+      "type": "u32"
+    },
+    "new_state": {
+      "name": "New State",
+      "type": "bool"
+    },
+    "selection_priority": {
+      "name": "Selection Priority",
+      "type": "u32"
+    },
+    "placement_priority": {
+      "name": "Placement Priority",
+      "type": "u32"
+    },
+    "tick_rate": {
+      "name": "Tick Rate",
+      "type": "f32"
+    },
+    "is_frozen": {
+      "name": "Is Frozen",
+      "type": "bool"
+    },
+    "tick_steps": {
+      "name": "Tick Steps",
+      "type": "u32"
+    },
+    "small_explosion_particles": {
+      "name": "Small Explosion Particles",
+      "type": "u32"
+    },
+    "large_explosion_particles": {
+      "name": "Large Explosion Particles",
+      "type": "u32"
+    },
+    "host": {
+      "name": "Host",
+      "type": "string"
+    },
+    "port": {
+      "name": "Port",
+      "type": "u32"
+    },
+    "should_authenticate": {
+      "name": "Should Authenticate",
+      "type": "bool"
+    },
+    "debug_sample_type": {
+      "name": "Debug Sample Type",
+      "type": "u32"
+    },
+    "namespace": {
+      "name": "Namespace",
+      "type": "string"
+    },
+    "version": {
+      "name": "Version",
+      "type": "string"
+    },
+    "ambient": {
+      "name": "Ambient",
+      "type": "bool"
+    },
+    "show_particles": {
+      "name": "Show Particles",
+      "type": "bool"
+    },
+    "show_icon": {
+      "name": "Show Icon",
+      "type": "bool"
+    },
+    "data_component_count": {
+      "name": "Data Component Count",
+      "type": "u32"
+    },
+    "void_component_count": {
+      "name": "Void Component Count",
+      "type": "u32"
+    },
+    "component_type": {
+      "name": "Component Type",
+      "type": "string"
+    },
+    "damage": {
+      "name": "Damage",
+      "type": "u32"
+    },
+    "unbreakable": {
+      "name": "Unbreakable",
+      "type": "bool"
+    },
+    "custom_name": {
+      "name": "Custom Name",
+      "type": [
+        "string",
+        "bytes"
+      ]
+    },
+    "show_in_tooltip": {
+      "name": "Show In Tooltip",
+      "type": "bool"
+    },
+    "value_matcher_type": {
+      "name": "Value Matcher Type",
+      "type": "bool"
+    },
+    "nbt_predicate": {
+      "name": "NBT Predicate",
+      "type": "bytes"
+    },
+    "attribute": {
+      "name": "Attribute",
+      "type": "u32"
+    },
+    "custom_model_data": {
+      "name": "Custom Model Data",
+      "type": "u32"
+    },
+    "repair_cost": {
+      "name": "Repair Cost",
+      "type": "u32"
+    },
+    "enchantment_glint_override": {
+      "name": "Enchantment Glint Override",
+      "type": "bool"
+    },
+    "map_color": {
+      "name": "Map Color",
+      "type": "i32"
+    },
+    "map_post_processing": {
+      "name": "Map Post Processing",
+      "type": "u32"
+    },
+    "potion": {
+      "name": "Potion",
+      "type": "u32"
+    },
+    "custom_color": {
+      "name": "Custom Color",
+      "type": "i32"
+    },
+    "raw": {
+      "name": "Raw String",
+      "type": [
+        "string",
+        "bytes"
+      ]
+    },
+    "filtered": {
+      "name": "Filtered String",
+      "type": [
+        "string",
+        "bytes"
+      ]
+    },
+    "title_raw": {
+      "name": "Title Raw String",
+      "type": "string"
+    },
+    "title_filtered": {
+      "name": "Title Filtered String",
+      "type": "string"
+    },
+    "author": {
+      "name": "Author",
+      "type": "string"
+    },
+    "generation": {
+      "name": "Generation",
+      "type": "u32"
+    },
+    "trim_material": {
+      "name": "Trim Material",
+      "type": "u32"
+    },
+    "asset_name": {
+      "name": "Asset Name",
+      "type": "string"
+    },
+    "ingredient": {
+      "name": "Ingredient",
+      "type": "u32"
+    },
+    "item_model_index": {
+      "name": "Item Model Index",
+      "type": "f32"
+    },
+    "armor_material": {
+      "name": "Armor Material",
+      "type": "u32"
+    },
+    "texture": {
+      "name": "Texture",
+      "type": "string"
+    },
+    "trim_pattern": {
+      "name": "Trim Pattern",
+      "type": "u32"
+    },
+    "asset_id": {
+      "name": "Asset ID",
+      "type": "string"
+    },
+    "template_item": {
+      "name": "Template Item",
+      "type": "u32"
+    },
+    "decal": {
+      "name": "Decal",
+      "type": "bool"
+    },
+    "entity_data": {
+      "name": "Entity Data",
+      "type": "bytes"
+    },
+    "bucket_entity_data": {
+      "name": "Bucket Entity Data",
+      "type": "bytes"
+    },
+    "block_entity_data": {
+      "name": "Block Entity Data",
+      "type": "bytes"
+    },
+    "instrument": {
+      "name": "Instrument",
+      "type": "u32"
+    },
+    "sound_event": {
+      "name": "Sound Event",
+      "type": "u32"
+    },
+    "useDuration": {
+      "name": "Use Duration",
+      "type": "i32"
+    },
+    "dimension": {
+      "name": "Dimension",
+      "type": "u32"
+    },
+    "tracked": {
+      "name": "Tracked",
+      "type": "bool"
+    },
+    "shape": {
+      "name": "Shape",
+      "type": "u32"
+    },
+    "has_trail": {
+      "name": "Has Trail",
+      "type": "bool"
+    },
+    "has_twinkle": {
+      "name": "Has Twinkle",
+      "type": "bool"
+    },
+    "flight_duration": {
+      "name": "Flight Duration",
+      "type": "u32"
+    },
+    "note_block_sound": {
+      "name": "Note Block Sound",
+      "type": "string"
+    },
+    "pattern": {
+      "name": "Pattern",
+      "type": "u32"
+    },
+    "base_color": {
+      "name": "Base Color",
+      "type": "u32"
+    },
+    "property_name": {
+      "name": "Property Name",
+      "type": "string"
+    },
+    "property_value": {
+      "name": "Property Value",
+      "type": "string"
+    },
+    "custom_data": {
+      "name": "Custom Data",
+      "type": "bytes"
+    },
+    "ticks_in_hive": {
+      "name": "Ticks In Hive",
+      "type": "u32"
+    },
+    "min_ticks_in_hive": {
+      "name": "Min Ticks In Hive",
+      "type": "u32"
+    },
+    "use_duration": {
+      "name": "Use Duration",
+      "type": "u32"
+    },
+    "translation_key": {
+      "name": "Translation Key",
+      "type": "string"
+    },
+    "probability": {
+      "name": "Probability",
+      "type": "f32"
+    },
+    "nutrition": {
+      "name": "Nutrition",
+      "type": "f32"
+    },
+    "saturation_modifier": {
+      "name": "Saturation Modifier",
+      "type": "f32"
+    },
+    "can_always_eat": {
+      "name": "Can Always Eat",
+      "type": "bool"
+    },
+    "eat_seconds": {
+      "name": "Eat Seconds",
+      "type": "f32"
+    },
+    "correct_for_drops": {
+      "name": "Correct For Drops",
+      "type": "bool"
+    },
+    "default_mining_speed": {
+      "name": "Default Mining Speed",
+      "type": "f32"
+    },
+    "damage_per_block": {
+      "name": "Damage Per Block",
+      "type": "f32"
+    },
+    "ominous_bottle_amplifier": {
+      "name": "Ominous Bottle Amplifier",
+      "type": "u32"
+    },
+    "x_power": {
+      "name": "X Power",
+      "type": "f64"
+    },
+    "y_power": {
+      "name": "Y Power",
+      "type": "f64"
+    },
+    "z_power": {
+      "name": "Z Power",
+      "type": "f64"
     }
   },
   "mappings": {
@@ -1886,6 +2374,10 @@
     "explosion/playerMotionX": "player_motion_x",
     "explosion/playerMotionY": "player_motion_y",
     "explosion/playerMotionZ": "player_motion_z",
+    "explosion/smallExplosionParticles": "small_explosion_particles",
+    "explosion/largeExplosionParticles": "large_explosion_particles",
+    "explosion/sound/resource": "resource",
+    "explosion/sound/range": "range",
     "unload_chunk/chunkX": "chunk_x",
     "unload_chunk/chunkZ": "chunk_z",
     "game_state_change/reason": "event",
@@ -1939,6 +2431,7 @@
     "login/simulationDistance": "simulation_distance",
     "login/reducedDebugInfo": "reduced_debug_info",
     "login/enableRespawnScreen": "enable_respawn_screen",
+    "login/doLimitedCrafting": "do_limited_crafting",
     "login/isDebug": "is_debug",
     "login/isFlat": "is_flat",
     "login/dimensionName": "dimension_name",
@@ -2038,10 +2531,18 @@
     "entity_destroy/entityIds": "entity_id",
     "remove_entity_effect/entityId": "entity_id",
     "remove_entity_effect/effectId": "effect_id",
+    "reset_score/owner": "item_name",
+    "reset_score/objectiveName": "score_name",
     "resource_pack_send/url": "url",
     "resource_pack_send/hash": "hash",
     "resource_pack_send/forced": "forced",
     "resource_pack_send/promptMessage": "prompt_message",
+    "resource_pack_pop/id": "uuid",
+    "resource_pack_push/id": "uuid",
+    "resource_pack_push/url": "url",
+    "resource_pack_push/hash": "hash",
+    "resource_pack_push/forced": "forced",
+    "resource_pack_push/promptMessage": "prompt_message",
     "respawn/dimension": "dimension_name",
     "respawn/worldName": "world_name",
     "respawn/hashedSeed": "hashed_seed",
@@ -2079,6 +2580,8 @@
     "scoreboard_objective/action": "action",
     "scoreboard_objective/displayText": "display_text",
     "scoreboard_objective/type": "type",
+    "scoreboard_objective/numberFormat/type": "type",
+    "scoreboard_objective/numberFormat/data": "data",
     "set_passengers/entityId": "entity_id",
     "set_passengers/passengers": "entity_id",
     "teams/team": "team",
@@ -2092,9 +2595,11 @@
     "teams/suffix": "suffix",
     "teams/players": "player",
     "scoreboard_score/itemName": "item_name",
-    "scoreboard_score/action": "action",
     "scoreboard_score/scoreName": "score_name",
     "scoreboard_score/value": "value",
+    "scoreboard_score/displayText": "display_text",
+    "scoreboard_score/numberFormat/type": "type",
+    "scoreboard_score/numberFormat/data": "data",
     "spawn_position/angle": "angle",
     "update_time/age": "age",
     "update_time/time": "time",
@@ -2150,6 +2655,7 @@
     "server_data/motd": "motd",
     "server_data/iconBytes": "icon_bytes",
     "server_data/enforcesSecureChat": "enforces_secure_chat",
+    "login/enforcesSecureChat": "enforces_secure_chat",
     "type": "type",
     "recipeId": "recipe_id",
     "declare_recipes/recipes/data/group": "group",
@@ -2200,6 +2706,13 @@
     "chat_command/argumentSignatures/signature": "signature",
     "chat_command/messageCount": "message_count",
     "chat_command/acknowledged": "acknowledged",
+    "chat_command_signed/command": "command",
+    "chat_command_signed/timestamp": "timestamp",
+    "chat_command_signed/salt": "salt",
+    "chat_command_signed/argumentSignatures/argumentName": "argument_name",
+    "chat_command_signed/argumentSignatures/signature": "signature",
+    "chat_command_signed/messageCount": "message_count",
+    "chat_command_signed/acknowledged": "acknowledged",
     "chat_message/message": "message",
     "chat_message/timestamp": "timestamp",
     "chat_message/salt": "salt",
@@ -2295,7 +2808,9 @@
     "recipe_book/bookId": "book_id",
     "recipe_book/bookOpen": "book_open",
     "recipe_book/filterActive": "filter_active",
+    "resource_pack_receive/id": "uuid",
     "resource_pack_receive/result": "result",
+    "held_item_slot/slot": "slot",
     "held_item_slot/slotId": "slot",
     "set_creative_slot/slot": "slot",
     "update_jigsaw_block/name": "name",
@@ -2303,6 +2818,8 @@
     "update_jigsaw_block/pool": "pool",
     "update_jigsaw_block/finalState": "final_state",
     "update_jigsaw_block/jointType": "joint_type",
+    "update_jigsaw_block/selectionPriority": "selection_priority",
+    "update_jigsaw_block/placementPriority": "placement_priority",
     "update_sign/isFrontText": "is_front_text",
     "update_sign/text1": "text_1",
     "update_sign/text2": "text_2",
@@ -2327,7 +2844,143 @@
     "chat_session_update/publicKey": "public_key",
     "chat_session_update/signature": "signature",
     "end_combat_event/entityId": "killer_id",
-    "death_combat_event/entityId": "killer_id"
+    "death_combat_event/entityId": "killer_id",
+    "common_player_spawn_info/worldType": "world_type",
+    "common_player_spawn_info/worldName": "world_name",
+    "common_player_spawn_info/hashedSeed": "hashed_seed",
+    "common_player_spawn_info/gameMode": "gamemode",
+    "common_player_spawn_info/previousGameMode": "previous_gamemode",
+    "common_player_spawn_info/isDebug": "is_debug",
+    "common_player_spawn_info/isFlat": "is_flat",
+    "common_player_spawn_info/death/dimensionName": "dimension_name",
+    "common_player_spawn_info/portalCooldown": "portal_cooldown",
+    "chunk_batch_finished/batchSize": "batch_size",
+    "chunk_batch_received/desiredBatchSize": "desired_batch_size",
+    "registry_data/registryData": "registry_data",
+    "pong/time": "ping_time_je",
+    "window_slot_state_changed/windowId": "window_id",
+    "window_slot_state_changed/slotId": "slot_id",
+    "window_slot_state_changed/newState": "new_state",
+    "ticking_state/tickRate": "tick_rate",
+    "ticking_state/isFrozen": "is_frozen",
+    "ticking_step/tickSteps": "tick_steps",
+    "store_cookie/key": "key",
+    "store_cookie/payload": "data",
+    "transfer/host": "host",
+    "transfer/port": "port",
+    "cookie_request/key": "key",
+    "cookie_response/key": "key",
+    "cookie_response/payload": "data",
+    "encryption_begin/shouldAuthenticate": "should_authenticate",
+    "debug_sample/debugSampleType": "debug_sample_type",
+    "debug_sample_subscription/debugSampleType": "debug_sample_type",
+    "select_known_packs/knownPacks/namespace": "namespace",
+    "select_known_packs/knownPacks/id": "id",
+    "select_known_packs/knownPacks/version": "version",
+    "effect_detail/amplifier": "amplifier",
+    "effect_detail/duration": "duration",
+    "effect_detail/ambient": "ambient",
+    "effect_detail/showParticles": "show_particles",
+    "effect_detail/showIcon": "show_icon",
+    "slot/itemCount": "item_count",
+    "slot/[unnamed]/componentData/dataComponentCount": "data_component_count",
+    "slot/[unnamed]/componentData/voidComponentCount": "void_component_count",
+    "data_component/componentType": "component_type",
+    "data_component/componentData[damage]": "damage",
+    "data_component/componentData[unbreakable]": "unbreakable",
+    "data_component/componentData[custom_name]": "custom_name",
+    "data_component/componentData/showInTooltip": "show_in_tooltip",
+    "data_component/componentData/blockPredicates/statePredicate/property": "property",
+    "data_component/componentData/blockPredicates/statePredicate/valueMatcherType": "value_matcher_type",
+    "data_component/componentData/blockPredicates/statePredicate/valueMatcher/min": "min",
+    "data_component/componentData/blockPredicates/statePredicate/valueMatcher/max": "max",
+    "data_component/componentData/modifiers/attribute": "attribute",
+    "data_component/componentData/modifiers/uuid": "uuid",
+    "data_component/componentData/modifiers/name": "name",
+    "data_component/componentData/modifiers/amount": "amount",
+    "data_component/componentData/modifiers/operation": "operation",
+    "data_component/componentData/slot": "slot",
+    "data_component/componentData[custom_model_data]": "custom_model_data",
+    "data_component/componentData[repair_cost]": "repair_cost",
+    "data_component/componentData[enchantment_glint_override]": "enchantment_glint_override",
+    "data_component/componentData/color": "color",
+    "data_component/componentData[map_color]": "map_color",
+    "data_component/componentData[map_id]": "map_id",
+    "data_component/componentData[map_post_processing]": "map_post_processing",
+    "data_component/componentData/potion": "potion",
+    "data_component/componentData/customColor": "custom_color",
+    "data_component/componentData/customEffects/effect": "effect_id",
+    "data_component/componentData/effect": "effect_id",
+    "data_component/componentData/duration": "duration",
+    "data_component/componentData/raw": "raw",
+    "data_component/componentData/filtered": "filtered",
+    "data_component/componentData/titleRaw": "title_raw",
+    "data_component/componentData/titleFiltered": "title_filtered",
+    "data_component/componentData/author": "author",
+    "data_component/componentData/generation": "generation",
+    "data_component/componentData/pages/raw": "raw",
+    "data_component/componentData/pages/filtered": "filtered",
+    "data_component/componentData/trimMaterial": "trim_material",
+    "data_component/componentData/trimMaterialDirectData/assetName": "asset_name",
+    "data_component/componentData/trimMaterialDirectData/ingredient": "ingredient",
+    "data_component/componentData/trimMaterialDirectData/itemModelIndex": "item_model_index",
+    "data_component/componentData/trimMaterialDirectData/armorMaterialMap/armorMaterial": "armor_material",
+    "data_component/componentData/trimMaterialDirectData/armorMaterialMap/texture": "texture",
+    "data_component/componentData/trimPattern": "trim_pattern",
+    "data_component/componentData/trimPatternDirectData/assetId": "asset_id",
+    "data_component/componentData/trimPatternDirectData/templateItem": "template_item",
+    "data_component/componentData/trimPatternDirectData/description": "desc",
+    "data_component/componentData/trimPatternDirectData/decal": "decal",
+    "data_component/componentData[entity_data]": "entity_data",
+    "data_component/componentData[bucket_entity_data]": "bucket_entity_data",
+    "data_component/componentData[block_entity_data]": "block_entity_data",
+    "data_component/componentData/instrument": "instrument",
+    "data_component/componentData/instrumentDirectData/soundEvent": "sound_event",
+    "data_component/componentData/instrumentDirectData/soundEventDirectData/soundId": "sound_id",
+    "data_component/componentData/instrumentDirectData/soundEventDirectData/range": "range",
+    "data_component/componentData/instrumentDirectData/useDuration": "use_duration",
+    "data_component/componentData/instrumentDirectData/range": "range",
+    "data_component/componentData/dimension": "dimension",
+    "data_component/componentData/globalPos/dimension": "dimension",
+    "data_component/componentData/tracked": "tracked",
+    "data_component/componentData/shape": "shape",
+    "data_component/componentData/hasTrail": "has_trail",
+    "data_component/componentData/hasTwinkle": "has_twinkle",
+    "data_component/componentData/flightDuration": "flight_duration",
+    "data_component/componentData/explosions/shape": "shape",
+    "data_component/componentData/explosions/hasTrail": "has_trail",
+    "data_component/componentData/explosions/hasTwinkle": "has_twinkle",
+    "data_component/componentData/name": "name",
+    "data_component/componentData/uuid": "uuid",
+    "data_component/componentData/properties/key": "key",
+    "data_component/componentData/properties/value": "value",
+    "data_component/componentData/properties/signature": "signature",
+    "data_component/componentData[note_block_sound]": "note_block_sound",
+    "data_component/componentData/pattern": "pattern",
+    "data_component/componentData/patternDirectData/assetId": "asset_id",
+    "data_component/componentData/patternDirectData/translationKey": "translation_key",
+    "data_component/componentData[base_color]": "base_color",
+    "data_component/componentData/propertyName": "property_name",
+    "data_component/componentData/propertyValue": "property_value",
+    "data_component/componentData/customData": "custom_data",
+    "data_component/componentData/ticksInHive": "ticks_in_hive",
+    "data_component/componentData/minTicksInHive": "min_ticks_in_hive",
+    "data_component/componentData/possibleEffect/effect": "effect_id",
+    "data_component/componentData/possibleEffect/probability": "probability",
+    "data_component/componentData/nutrition": "nutrition",
+    "data_component/componentData/saturationModifier": "saturation_modifier",
+    "data_component/componentData/canAlwaysEat": "can_always_eat",
+    "data_component/componentData/eatSeconds": "eat_seconds",
+    "data_component/componentData/rules/speed": "speed",
+    "data_component/componentData/rules/correctForDrops": "correct_for_drops",
+    "data_component/componentData/defaultMiningSpeed": "default_mining_speed",
+    "data_component/componentData/damagePerBlock": "damage_per_block",
+    "data_component/componentData[ominous_bottle_amplifier]": "ominous_bottle_amplifier",
+    "data_component/componentData[item_name]": "item_name",
+    "projectile_power/entityId": "entity_id",
+    "projectile_power/xPower": "x_power",
+    "projectile_power/yPower": "y_power",
+    "projectile_power/zPower": "z_power"
   },
   "bitmask_collection": {
     "[26]x[26]z[12]y": [
@@ -2449,6 +3102,8 @@
     "player_chat/filterTypeMask": "Filter Type Mask",
     "player_remove/players": "Players",
     "player_info/data": "Player Data",
+    "player_info/data/player/game_profile": "Game Profile",
+    "player_info/data/chatSession/chat_session": "Chat Session",
     "entity_destroy/entityIds": "Destroy Entities",
     "respawn/death": "Death Data",
     "entity_equipment/equipments": "Equipments",
@@ -2474,6 +3129,249 @@
     "window_click/changedSlots": "Changed Slots",
     "window_click/changedSlots/item/slot": "Item",
     "window_click/cursorItem/slot": "Cursor Item",
-    "set_creative_slot/item/slot": "Item"
+    "set_creative_slot/item/slot": "Item",
+    "login/playerSpawnInfo/common_player_spawn_info": "Common Player Spawn Info",
+    "respawn/playerSpawnInfo/common_player_spawn_info": "Common Player Spawn Info",
+    "unlock_recipes/recipes1": "Recipes 1",
+    "unlock_recipes/recipes2": "Recipes 2",
+    "scoreboard_objective/numberFormat": "Number Format",
+    "scoreboard_score/numberFormat": "Number Format",
+    "explosion/sound": "Sound",
+    "explosion/smallExplosionParticlesData": "Small Explosion Particles Data",
+    "explosion/largeExplosionParticlesData": "Large Explosion Particles Data",
+    "debug_sample/sample": "Sample Data",
+    "select_known_packs/knownPacks": "Known Packs",
+    "slot/[unnamed]/componentData": "Component Data",
+    "slot/[unnamed]/componentData/dataComponents": "Data Components",
+    "slot/[unnamed]/componentData/voidComponents": "Void Components",
+    "data_component/componentData": "Component Data",
+    "data_component/componentData/blockPredicates": "Block Predicates",
+    "data_component/componentData/blockPredicates/blocks": "Blocks",
+    "data_component/componentData/blockPredicates/statePredicate": "State Predicate",
+    "data_component/componentData/blockPredicates/statePredicate/valueMatcher": "Value Matcher",
+    "data_component/componentData/modifiers": "Modifiers",
+    "data_component/componentData/enchantments": "Enchantments",
+    "data_component/componentData/customEffects": "Custom Effects",
+    "data_component/componentData/customEffects/detail": "Effect Detail",
+    "data_component/componentData/pages": "Pages",
+    "data_component/componentData/trimMaterialDirectData": "Trim Material Direct Data",
+    "data_component/componentData/trimMaterialDirectData/armorMaterialMap": "Armor Material Map",
+    "data_component/componentData/instrumentDirectData": "Instrument Direct Data",
+    "data_component/componentData/colors": "Colors",
+    "data_component/componentData/fadeColors": "Fade Colors",
+    "data_component/componentData/explosions": "Explosions",
+    "data_component/componentData/explosions/colors": "Colors",
+    "data_component/componentData/explosions/fadeColors": "Fade Colors",
+    "data_component/componentData/properties": "Properties",
+    "effect_detail/hiddenEffect": "Hidden Effect",
+    "data_component/componentData/globalPos": "Global Position",
+    "data_component/componentData/patternDirectData": "Pattern Direct Data",
+    "data_component/componentData/possibleEffect": "Possible Effect",
+    "data_component/componentData/possibleEffect/detail": "Effect Detail",
+    "data_component/componentData/rules": "Rules",
+    "data_component/componentData/rules/blocks": "Blocks"
+  },
+  "packet_names": {
+    "toClient": {
+      "disconnect": "Client Login Disconnect",
+      "encryption_begin": "Client Hello",
+      "success": "Client Login Success",
+      "compress": "Client Compression",
+      "login_plugin_request": "Client Custom Query",
+      "bundle_delimiter": "Client Bundle Delimter",
+      "spawn_entity": "Client Add Entity",
+      "spawn_entity_experience_orb": "Client Add Experience Orb",
+      "named_entity_spawn": "Client Add Player",
+      "animation": "Client Animation",
+      "statistics": "Client Award Statistics",
+      "acknowledge_player_digging": "Client Block Changed ACK",
+      "block_break_animation": "Client Block Destruction",
+      "tile_entity_data": "Client Block Entity Data",
+      "block_action": "Client Block Action",
+      "block_change": "Client Block Event",
+      "boss_bar": "Client Boss Event",
+      "difficulty": "Client Change Difficulty",
+      "chunk_biomes": "Client Chunks Biomes",
+      "clear_titles": "Client Clear Titles",
+      "tab_complete": "Client Command Suggestions",
+      "declare_commands": "Client Commands",
+      "close_window": "Client Container Close",
+      "window_items": "Client Container Set Content",
+      "craft_progress_bar": "Client Container Set Data",
+      "set_slot": "Client Container Set Slot",
+      "set_cooldown": "Client Cooldown",
+      "chat_suggestions": "Client Custom Chat Completions",
+      "custom_payload": "Client Custom Payload",
+      "damage_event": "Client Damage Event",
+      "hide_message": "Client Delete Chat",
+      "kick_disconnect": "Client Disconnect",
+      "profileless_chat": "Client Disguised Chat",
+      "entity_status": "Client Entity Event",
+      "explosion": "Client Explode",
+      "unload_chunk": "Client Forget Level Chunk",
+      "game_state_change": "Client Game Event",
+      "open_horse_window": "Client Horse ScreenOpen",
+      "hurt_animation": "Client Hurt Animation",
+      "initialize_world_border": "Client Initialize Border",
+      "keep_alive": "Client Keep Alive",
+      "map_chunk": "Client Level Chunk with Light",
+      "world_event": "Client Level Event",
+      "world_particles": "Client Level Particles",
+      "update_light": "Client Light Update",
+      "login": "Client Login",
+      "map": "Client Map Item Data",
+      "trade_list": "Client Merchant Offers",
+      "rel_entity_move": "Client Move Entity Position",
+      "entity_move_look": "Client Move Entity Position & Rotation",
+      "entity_look": "Client Move Entity Rotation",
+      "vehicle_move": "Client Move Vehicle",
+      "open_book": "Client Open Book",
+      "open_window": "Client Open Screen",
+      "open_sign_entity": "Client Open Sign Editor",
+      "ping": "Client Ping",
+      "craft_recipe_response": "Client Place Ghost Recipe",
+      "abilities": "Client Player Abilities",
+      "player_chat": "Client Player Chat",
+      "end_combat_event": "Client Player Combat End",
+      "enter_combat_event": "Client Player Combat Enter",
+      "death_combat_event": "Client Player Combat Kill",
+      "player_remove": "Client Player Info Remove",
+      "player_info": "Client Player Info Update",
+      "face_player": "Client Player Look at",
+      "position": "Client Player Position",
+      "unlock_recipes": "Client Recipe",
+      "entity_destroy": "Client Remove Entities",
+      "remove_entity_effect": "Client Remove Mob Effect",
+      "resource_pack_send": "Client Resource Pack",
+      "resource_pack_pop": "Client Resource Pack Pop",
+      "resource_pack_push": "Client Resource Pack Push",
+      "respawn": "Client Respawn",
+      "entity_head_rotation": "Client Rotate Head",
+      "multi_block_change": "Client Section Blocks Update",
+      "select_advancement_tab": "Client Select Advancement Tab",
+      "server_data": "Client Server Data",
+      "action_bar": "Client Set Action Bar Text",
+      "world_border_center": "Client Set Border Center",
+      "world_border_lerp_size": "Client Set Border Lerp Size",
+      "world_border_size": "Client Set Border Size",
+      "world_border_warning_delay": "Client Set Border Warning Delay",
+      "world_border_warning_reach": "Client Set Border Warning Distance",
+      "camera": "Client Set Camera",
+      "held_item_slot": "Client Set Carried Item",
+      "update_view_position": "Client Set Chunk Cache Center",
+      "update_view_distance": "Client Set Chunk Cache Radius",
+      "spawn_position": "Client Set Default Spawn Position",
+      "scoreboard_display_objective": "Client Set Display Objective",
+      "entity_metadata": "Client Set Entity Data",
+      "attach_entity": "Client Set Entity Link",
+      "entity_velocity": "Client Set Entity Motion",
+      "entity_equipment": "Client Set Equipment",
+      "experience": "Client Set Experience",
+      "update_health": "Client Set Health",
+      "scoreboard_objective": "Client Set Objective",
+      "set_passengers": "Client Set Passengers",
+      "teams": "Client Set Player Team",
+      "scoreboard_score": "Client Set Score",
+      "simulation_distance": "Client Set Simulation Distance",
+      "set_title_subtitle": "Client Set Subtitle Text",
+      "update_time": "Client Set Time",
+      "set_title_text": "Client Set Title Text",
+      "set_title_time": "Client Set Titles Animation",
+      "entity_sound_effect": "Client Sound Entity",
+      "sound_effect": "Client Sound",
+      "stop_sound": "Client Stop Sound",
+      "system_chat": "Client System Chat",
+      "playerlist_header": "Client Tab List",
+      "nbt_query_response": "Client Tag Query",
+      "collect": "Client Take Item Entity",
+      "entity_teleport": "Client Teleport Entity",
+      "advancements": "Client Update Advancements",
+      "entity_update_attributes": "Client Update Attributes",
+      "feature_flags": "Client Update Enabled Features",
+      "entity_effect": "Client Update Mob Effect",
+      "declare_recipes": "Client Update Recipes",
+      "tags": "Client Update Tags",
+      "chunk_batch_finished": "Client Chunk Batch Finished",
+      "chunk_batch_start": "Client Chunk Batch Start",
+      "start_configuration": "Client Start Configuration",
+      "finish_configuration": "Client Finish Configuration",
+      "registry_data": "Client Registry Data",
+      "reset_score": "Client Reset Score",
+      "ticking_state": "Client Ticking State",
+      "ticking_step": "Client Ticking Step",
+      "store_cookie": "Client Store Cookie",
+      "transfer": "Client Transfer",
+      "cookie_request": "Client Request Cookie",
+      "debug_sample": "Client Debug Sample",
+      "select_known_packs": "Client Select Known Packs",
+      "reset_chat": "Client Reset Chat",
+      "projectile_power": "Client Projectile Power"
+    },
+    "toServer": {
+      "login_start": "Server Hello",
+      "encryption_begin": "Server Key",
+      "login_plugin_response": "Server Custom Query",
+      "login_acknowledgement": "Server Login Success ACK",
+      "teleport_confirm": "Server Accept Teleportation",
+      "query_block_nbt": "Server Block Entity Tag Query",
+      "set_difficulty": "Server Change Difficulty",
+      "message_acknowledgement": "Server Chat ACK",
+      "chat_command": "Server Chat Command",
+      "chat_command_signed": "Server Signed Chat Command",
+      "chat_message": "Server Chat",
+      "chat_session_update": "Server Chat Session Update",
+      "client_command": "Server Client Command",
+      "settings": "Server Client Information",
+      "tab_complete": "Server Command Suggestion",
+      "enchant_item": "Server Container Button Click",
+      "window_click": "Server Container Click",
+      "close_window": "Server Container Close",
+      "custom_payload": "Server Custom Payload",
+      "edit_book": "Server Edit Book",
+      "query_entity_nbt": "Server Entity Tag Query",
+      "use_entity": "Server Interact",
+      "generate_structure": "Server Jigsaw Generate",
+      "keep_alive": "Server Keep Alive",
+      "lock_difficulty": "Server Lock Difficulty",
+      "position": "Server Move Player Position",
+      "position_look": "Server Move Player Position & Rotation",
+      "look": "Server Move Player Rotation",
+      "flying": "Server Move Player Status-Only",
+      "vehicle_move": "Server Move Vehicle",
+      "steer_boat": "Server Paddle Boat",
+      "pick_item": "Server Pick Item",
+      "craft_recipe_request": "Server Place Recipe",
+      "abilities": "Server Player Abilities",
+      "block_dig": "Server Player Action",
+      "entity_action": "Server Player Command",
+      "steer_vehicle": "Server Player Input",
+      "ping": "Server Ping Request",
+      "pong": "Server Pong",
+      "recipe_book": "Server Recipe Book Change Settings",
+      "displayed_recipe": "Server Recipe Book Seen Recipe",
+      "name_item": "Server Rename Item",
+      "resource_pack_receive": "Server Resource Pack",
+      "advancement_tab": "Server Seen Advancements",
+      "select_trade": "Server Select Trade",
+      "set_beacon_effect": "Server Set Beacon",
+      "held_item_slot": "Server Set Carried Item",
+      "update_command_block": "Server Set Command Block",
+      "update_command_block_minecart": "Server Set Command Minecart",
+      "set_creative_slot": "Server Set Creative Mode Slot",
+      "update_jigsaw_block": "Server Set Jigsaw Block",
+      "update_structure_block": "Server Set Structure Block",
+      "update_sign": "Server Sign Update",
+      "arm_animation": "Server Swing",
+      "spectate": "Server Teleport To Entity",
+      "block_place": "Server Use Item on",
+      "use_item": "Server Use Item",
+      "chunk_batch_received": "Server Chunk Batch Received",
+      "configuration_acknowledgement": "Server Configuration ACK",
+      "finish_configuration": "Server Finish Configuration",
+      "window_slot_state_changed": "Server Container Slot State Changed",
+      "cookie_response": "Server Cookie Response",
+      "debug_sample_subscription": "Server Debug Sample Subscription",
+      "select_known_packs": "Server Select Known Packs"
+    }
   }
 }

@@ -100,18 +100,14 @@ gchar *get_java_version_name_by_data_version(guint data_version) {
 }
 
 guint find_nearest_java_protocol(guint data_version) {
-    unsigned head = 0, tail = data_version_list_je->len - 1;
-    while (head <= tail) {
-        unsigned mid = (head + tail) / 2;
-        guint mid_data = g_array_index(data_version_list_je, guint, mid);
-        if (mid_data == data_version)
-            return mid_data;
-        else if (mid_data < data_version)
-            head = mid + 1;
-        else
-            tail = mid - 1;
+    for (int cursor = 0; cursor < data_version_list_je->len; cursor++) {
+        guint data = g_array_index(data_version_list_je, guint, cursor);
+        if (data > data_version)
+            return g_array_index(data_version_list_je, guint, cursor - 1);
+        if (data == data_version)
+            return data;
     }
-    return g_array_index(data_version_list_je, guint, tail);
+    return g_array_index(data_version_list_je, guint, data_version_list_je->len - 1);
 }
 
 protocol_je_set get_protocol_je_set(gchar *java_version) {
@@ -125,65 +121,24 @@ protocol_je_set get_protocol_je_set(gchar *java_version) {
     cJSON *types = cJSON_GetObjectItem(json, "types");
     cJSON *login = cJSON_GetObjectItem(json, "login");
     cJSON *play = cJSON_GetObjectItem(json, "play");
-    protocol_set login_set = create_protocol_set(types, login, true);
-    protocol_set play_set = create_protocol_set(types, play, true);
-    cJSON_Delete(json);
-    protocol_je_set result = wmem_new(wmem_file_scope(), struct _protocol_je_set);
+    cJSON *config = cJSON_GetObjectItem(json, "configuration");
+
+    protocol_settings settings = {
+            get_java_data_version(java_version) >= 3567
+    };
+
+    protocol_je_set result = wmem_new(wmem_epan_scope(), struct _protocol_je_set);
+    protocol_set login_set = create_protocol_set(types, login, true, settings);
+    protocol_set play_set = create_protocol_set(types, play, true, settings);
     result->login = login_set;
     result->play = play_set;
+    if (config != NULL) {
+        protocol_set config_set = create_protocol_set(types, config, true, settings);
+        result->configuration = config_set;
+    }
+
+    cJSON_Delete(json);
     wmem_map_insert(protocol_schema_je, java_version, result);
     return result;
 }
 
-guint count_nbt_length_with_type(const guint8 *data, guint type) {
-    if (type == TAG_END)
-        return 0;
-    if (type == TAG_BYTE)
-        return 1;
-    if (type == TAG_SHORT)
-        return 2;
-    if (type == TAG_INT || type == TAG_FLOAT)
-        return 4;
-    if (type == TAG_LONG || type == TAG_DOUBLE)
-        return 8;
-    if (type == TAG_BYTE_ARRAY)
-        return 4 + ((((gint) data[0] & 0xff) << 24) | ((data[1] & 0xff) << 16) |
-                    ((data[2] & 0xff) << 8) | (data[3] & 0xff));
-    if (type == TAG_STRING)
-        return 2 + ((((gint) data[0] & 0xff) << 8) | (data[1] & 0xff));
-    if (type == TAG_LIST) {
-        guint sub_type = data[0];
-        if (sub_type == TAG_END)
-            return 5;
-        guint length = ((((gint) data[1] & 0xff) << 24) | ((data[2] & 0xff) << 16) |
-                        ((data[3] & 0xff) << 8) | (data[4] & 0xff));
-        guint sub_length = 0;
-        for (guint i = 0; i < length; i++)
-            sub_length += count_nbt_length_with_type(data + 5 + sub_length, sub_type);
-        return 5 + sub_length;
-    }
-    if (type == TAG_COMPOUND) {
-        guint sub_length = 0;
-        guint sub_type;
-        while ((sub_type = data[sub_length]) != TAG_END) {
-            gint name_length = ((((gint) data[sub_length + 1] & 0xff) << 8) | (data[sub_length + 2] & 0xff));
-            sub_length += 3 + name_length;
-            sub_length += count_nbt_length_with_type(data + sub_length, sub_type);
-        }
-        return sub_length + 1;
-    }
-    if (type == TAG_INT_ARRAY)
-        return 4 + ((((gint) data[0] & 0xff) << 24) | ((data[1] & 0xff) << 16) |
-                    ((data[2] & 0xff) << 8) | (data[3] & 0xff)) * 4;
-    if (type == TAG_LONG_ARRAY)
-        return 4 + ((((gint) data[0] & 0xff) << 24) | ((data[1] & 0xff) << 16) |
-                    ((data[2] & 0xff) << 8) | (data[3] & 0xff)) * 8;
-    return 0;
-}
-
-guint count_nbt_length(const guint8 *data) {
-    guint8 type = data[0];
-    gint skip = ((((gint) data[1] & 0xff) << 8) | (data[2] & 0xff));
-    guint length = count_nbt_length_with_type(data + 3 + skip, type);
-    return length + 3 + skip;
-}
